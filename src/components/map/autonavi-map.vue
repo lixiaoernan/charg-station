@@ -28,6 +28,10 @@ const addChargingStation = () => {
         iconSize: [40, 40],
         iconAnchor: [20, 40],
       }),
+      interactive: true,
+      title: station.name,
+      alt: station.name,
+      zIndexOffset: 1000,
     }).addTo(map);
 
     // 创建信息内容
@@ -41,7 +45,11 @@ const addChargingStation = () => {
     `;
 
     // 绑定点击事件
-    marker.bindPopup(popupContent);
+    marker.bindPopup(popupContent, {
+      direction: "top", // 提示框位置（可选：top, bottom, left, right）
+      offset: [0, -25], // 提示框偏移量
+      opacity: 0.9,
+    });
   });
 };
 
