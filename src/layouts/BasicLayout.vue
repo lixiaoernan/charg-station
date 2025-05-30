@@ -5,7 +5,7 @@
       <div class="flex flex-row justify-center align-center">
         <el-avatar :src="LOGO" />
         <div class="text-center ml-8px h-40px leading-40px font-bold text-16px">
-          {{ userStore.username }}
+          {{ userStore.username || "李小二" }}
         </div>
       </div>
       <el-button @click="handleLogout">退出</el-button>
@@ -104,7 +104,7 @@ const handleLogout = () => {
 
 .content {
   flex: 1;
-  padding: 20px;
+  /* padding: 20px; */
   background: #f0f2f5;
   overflow: auto;
 }

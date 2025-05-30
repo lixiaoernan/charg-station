@@ -92,7 +92,7 @@ import { reactive, ref } from "vue";
 import { ElMessage } from "element-plus";
 import { useRouter } from "vue-router";
 import { useUserStore } from "@/store/user";
-import request from "@/utils/request";
+import { login } from "@/services/login";
 
 const router = useRouter();
 const userStore = useUserStore();
@@ -117,9 +117,9 @@ const handleLogin = async () => {
   try {
     await formRef.value.validate();
     try {
-      const res = await request.post("/api/login", form);
+      const res = await login(form);
       userStore.loginSuccess({
-        token: res.data.token,
+        token: res.token,
         username: form.username,
       });
 
