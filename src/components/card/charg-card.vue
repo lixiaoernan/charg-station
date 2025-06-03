@@ -30,13 +30,33 @@
           </div>
         </div>
         <div class="line-container">
-          <div :class="`line-${item.line}`" class="line-block">
-            <div class="line-num">{{ item.line }}</div>
+          <div class="line-block">
+            <el-image
+              :src="ChargIcon"
+              style="width: 60px; height: 60px"></el-image>
           </div>
           <div class="vehicle-container">
             <div class="vehicle">
-              <div class="vehicle-item">桩ID:CP-001234</div>
-              <div class="vehicle-item">名称:A区入口快充桩</div>
+              <div class="vehicle-item">
+                <span class="vehicle-span">桩ID:</span>
+                {{ item.id }}
+              </div>
+              <div class="vehicle-item">
+                <span class="vehicle-span">名称:</span>
+                {{ item.name }}
+              </div>
+              <div class="vehicle-item">
+                <span class="vehicle-span">经度:</span>
+                {{ item.longitude }}
+              </div>
+              <div class="vehicle-item">
+                <span class="vehicle-span">纬度:</span>
+                {{ item.latitude }}
+              </div>
+              <div class="vehicle-item-full">
+                <span class="vehicle-span">地址:</span>
+                {{ item.address }}
+              </div>
             </div>
           </div>
         </div>
@@ -47,6 +67,7 @@
 
 <script lang="ts" setup>
 import { reactive, toRefs, watch } from "vue";
+import ChargIcon from "@/assets/chargIcon.png";
 
 // 子组件属性定义
 const props = defineProps({
@@ -230,7 +251,7 @@ defineExpose({ getSelectionRows, clearSelectData, selectData });
     color: white;
     width: 80px;
     height: 70px;
-    margin-top: 50px;
+    margin-top: 40px;
   }
 
   .line-num {
@@ -251,7 +272,7 @@ defineExpose({ getSelectionRows, clearSelectData, selectData });
     display: flex;
     flex: 1;
     flex-direction: column;
-    margin: 32px 0px 0px 60px;
+    margin: 32px 0px 0px 40px;
     .vehicle {
       display: flex;
       flex-direction: row;
@@ -259,6 +280,14 @@ defineExpose({ getSelectionRows, clearSelectData, selectData });
       flex-wrap: wrap;
       .vehicle-item {
         width: 49%;
+        margin-bottom: 8px;
+      }
+      .vehicle-item-full {
+        width: 100%;
+        margin-bottom: 8px;
+      }
+      .vehicle-span {
+        color: #888888;
       }
     }
   }

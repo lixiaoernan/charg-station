@@ -49,7 +49,7 @@ export const routes: Array<RouteRecordRaw> = [
         path: "/demo/select-card",
         name: "SelectCard",
         component: () => import("@/views/demo/select-card/index.vue"),
-        meta: { title: "选择卡", icon: "Select" },
+        meta: { title: "选择卡片", icon: "Select" },
       },
     ],
   },
