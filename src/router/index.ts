@@ -28,6 +28,12 @@ export const routes: Array<RouteRecordRaw> = [
         meta: { title: "首页", icon: "HomeFilled" },
       },
       {
+        path: "/statistical",
+        name: "Statistical",
+        component: () => import("@/views/statistical/index.vue"),
+        meta: { title: "统计分析", icon: "PieChart" },
+      },
+      {
         path: "/user",
         name: "User",
         component: () => import("@/views/user/index.vue"),
@@ -38,6 +44,12 @@ export const routes: Array<RouteRecordRaw> = [
         name: "System",
         component: () => import("@/views/system/index.vue"),
         meta: { title: "系统设置", icon: "Tools" },
+      },
+      {
+        path: "/demo/select-card",
+        name: "SelectCard",
+        component: () => import("@/views/demo/select-card/index.vue"),
+        meta: { title: "选择卡", icon: "Select" },
       },
     ],
   },

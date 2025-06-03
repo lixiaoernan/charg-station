@@ -22,11 +22,4 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"), // 关键配置
     },
   },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@use "@/assets/styles/variables.scss" as *;`,
-      },
-    },
-  },
 });

@@ -9,6 +9,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AutonaviMap: typeof import('./src/components/map/autonavi-map.vue')['default']
+    Bar: typeof import('./src/components/echart/bar.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElButton: typeof import('element-plus/es')['ElButton']
@@ -29,7 +30,10 @@ declare module 'vue' {
     ElTable: typeof import('element-plus/es')['ElTable']
     ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     ElTree: typeof import('element-plus/es')['ElTree']
+    Line: typeof import('./src/components/echart/line.vue')['default']
+    LineBarMix: typeof import('./src/components/echart/lineBarMix.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    WordClound: typeof import('./src/components/echart/wordClound.vue')['default']
   }
 }
